@@ -1,0 +1,132 @@
+/*Filename: style.css File */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  background: #000;
+  color: #fff;
+}
+
+.main_box {
+  background-color: #fafafa;
+  color: #000;
+  transform-origin: top left;
+  transition: transform 0.5 linear;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 3em;
+}
+
+.main_box.show-nav {
+  transform: rotate(-20deg);
+}
+
+.circle-container {
+  position: fixed;
+  top: -6em;
+  left: -6em;
+}
+
+.circle {
+  background-color: #ff7979;
+  height: 12em;
+  width: 12em;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.5s linear;
+  cursor: pointer;
+}
+
+.circle button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 6em;
+  background: transparent;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+}
+
+.circle button:focus {
+  outline: none;
+}
+
+.circle button.open {
+  left: 60%;
+}
+
+.circle button.close {
+  top: 60%;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+
+.main_box.show-nav .circle {
+  transform: rotate(-70deg);
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #2b9348;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #2b9348;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #2b9348;
+}
+
+#main {
+  transition: margin-left 0.5s;
+  padding: 20px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+
+  .sidebar a {
+    font-size: 18px;
+  }
+}
